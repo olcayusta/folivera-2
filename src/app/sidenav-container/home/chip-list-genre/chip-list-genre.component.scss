@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  margin-left: -4px;
+  padding: 0 160px;
+}
+
+mat-chip-list {
+  display: flex;
+  margin: 0 0 64px 0;
+  overflow-x: auto;
+}
+
+@media (max-width: 599px) {
+  :host {
+    margin: 24px 0 24px 0;
+    padding-top: 56px;
+  }
+
+  mat-chip-list {
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+mat-chip-list {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+mat-chip-list::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: #2f2f2f;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.genre-list {
+  margin-top: 16px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .mat-chip-list-wrapper {
+  flex-wrap: nowrap;
+  margin: 0;
+}

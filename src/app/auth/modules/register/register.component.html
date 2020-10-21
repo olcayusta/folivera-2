@@ -1,0 +1,27 @@
+<div class="register-form">
+  <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+
+    <div class="form-header">
+      <h4 class="headline-4">Hesap oluştur</h4>
+    </div>
+
+    <div class="form-body">
+      <mat-form-field>
+        <mat-label>E-posta</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta girin</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Şifre</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error *ngIf="form.get('password').hasError('required')">Bir parola girin</mat-error>
+        <button type="button" matRipple matSuffix class="suffix-button">
+          <app-visibility-off-icon></app-visibility-off-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="row-actions">
+      <button type="submit" mat-raised-button color="primary">İLERİ</button>
+    </div>
+  </form>
+</div>

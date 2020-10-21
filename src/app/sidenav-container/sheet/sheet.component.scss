@@ -1,0 +1,68 @@
+mat-toolbar {
+  background: transparent !important;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+.app-title {
+  margin-left: 24px;
+}
+
+.checkbox-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px 16px;
+  padding-left: 16px;
+}
+
+.row-actions {
+  padding: 16px;
+}
+
+.select-nav-list {
+  margin-top: 16px;
+}
+
+.select-format {
+  padding: 0 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-select-panel {
+  padding: 8px 0 !important;
+  background-color: #2f2f2f;
+}
+
+::ng-deep .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background-color: #484848 !important;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.15px;;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+mat-slider {
+  display: flex;
+  margin: 0 8px;
+}
+
+.mat-slider-wrapper {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+mat-radio-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  margin: 0 16px;
+}
+
+::ng-deep .mat-radio-label-content {
+  padding-left: 16px !important;
+}

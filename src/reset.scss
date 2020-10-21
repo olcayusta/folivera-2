@@ -1,0 +1,57 @@
+// toolbar box shadow hatasini fixlemek icin yaptim
+.mat-drawer-side {
+  z-index: 1 !important;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+mat-nav-list {
+  padding-bottom: 8px;
+}
+
+mat-sidenav {
+  width: 320px;
+  background-color: #121212 !important;
+}
+
+.mat-menu-panel {
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+  // border-radius: 8px !important;
+}
+
+.mat-menu-item {
+  // letter-spacing: .25px;
+  font-size: 16px !important;
+}
+
+.mat-dialog-container {
+  box-shadow: 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+.mat-dialog-actions {
+  box-sizing: content-box;
+}
+
+.mat-snack-bar-container {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
+.mat-simple-snackbar {
+  letter-spacing: .25px;
+}
+
+.mat-checkbox-inner-container {
+  margin-right: 16px !important;
+}
+
+.mat-slider-track-wrapper {
+  border-radius: 24px;
+}
+
+.mat-raised-button, .mat-button {
+  padding: 0 8px !important;
+  // letter-spacing: 1.25px;
+}

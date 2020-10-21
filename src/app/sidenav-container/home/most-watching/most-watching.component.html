@@ -1,0 +1,10 @@
+<ng-container *ngIf="movies$ | async as movies; else spinner">
+  <h4 class="headline-4">Son eklenenler</h4>
+  <div class="items">
+    <app-most-watching-item *ngFor="let movie of movies" [movie]="movie"></app-most-watching-item>
+  </div>
+</ng-container>
+
+<ng-template #spinner>
+  <mat-spinner diameter="32"></mat-spinner>
+</ng-template>

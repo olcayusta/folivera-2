@@ -1,0 +1,12 @@
+<mat-nav-list>
+  <mat-list-item (click)="makeLevelAuto()">
+    <span class="empty-button" *ngIf="!data.hls.autoLevelEnabled"></span>
+    <mat-icon *ngIf="data.hls.autoLevelEnabled">check</mat-icon>
+    <span>Otomatik</span>
+  </mat-list-item>
+  <mat-list-item *ngFor="let level of levels; let index = index" (click)="changeResolution(index)">
+    <mat-icon *ngIf="!data.hls.autoLevelEnabled && index === data.hls.currentLevel">check</mat-icon>
+    <span class="empty-button" *ngIf="data.hls.autoLevelEnabled || data.hls.currentLevel !== index"></span>
+    <span>{{level.height}}p</span>
+  </mat-list-item>
+</mat-nav-list>

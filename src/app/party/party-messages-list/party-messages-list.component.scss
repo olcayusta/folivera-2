@@ -1,0 +1,28 @@
+:host {
+  padding: 16px;
+  overflow: auto;
+  height: 100vh;
+}
+
+.chat-box-item {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+
+.chat-item-user-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.chat-post {
+  font-size: 14px;
+  line-height: 20px;
+  // sbackground-color: #eee;
+}

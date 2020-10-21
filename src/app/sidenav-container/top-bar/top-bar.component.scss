@@ -1,0 +1,53 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 10px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.14);
+  background-color: #272727;
+  // background-color: #212121;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+#right-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+app-filter-list-icon,
+::ng-deep app-search-icon {
+  display: inline-flex;
+}
+
+[data-stuck] {
+  position: fixed;
+  top: 0;
+  transition: transform 0.15s;
+}
+
+[data-stuck='false'] {
+  transform: translate3d(0, -60px, 0);
+  transition: all 0.15s;
+}
+
+@media (max-width: 599px) {
+  [hidden] {
+    display: none;
+  }
+
+  app-search-form {
+    display: none;
+  }
+}
+
+.search-icon {
+  margin-right: 8px;
+}
+
+.mat-button {
+  font-family: Inter, sans-serif;
+}

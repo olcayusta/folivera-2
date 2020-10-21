@@ -1,0 +1,16 @@
+<!--<ng-container *ngIf="isSmallScreen; else webPlayer">
+&lt;!&ndash;  <app-mobile-player [isFullscreenEnabled]="isFullscreenEnabled"
+                     (changeFullScreen)="changeFullscreen()"></app-mobile-player>&ndash;&gt;
+  <ng-container *ngComponentOutlet="mobilePlayerComponent"></ng-container>
+</ng-container>
+
+<ng-template #webPlayer>
+&lt;!&ndash;  <app-desktop-player
+    [levels]="hls.levels"
+    [audioTracks]="audioTracks"
+    [subtitles]="subtitles"></app-desktop-player>&ndash;&gt;
+  <ng-container *ngComponentOutlet="desktopPlayerComponent"></ng-container>
+</ng-template>-->
+
+<!--<ng-container [ngComponentOutlet]="isSmallScreen ? mobilePlayerComponent : desktopPlayerComponent"></ng-container>-->
+<ng-container [ngComponentOutlet]="playerComponent"></ng-container>

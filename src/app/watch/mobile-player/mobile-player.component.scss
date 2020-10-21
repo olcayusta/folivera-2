@@ -1,0 +1,85 @@
+.player-footer-m {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 0 24px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.player-footer-m-header {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  margin-bottom: -8px;
+}
+
+.mobile-time {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.time-bracket {
+  padding: 0 4px;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+mat-slider {
+  // height: 32px;
+}
+
+/* Overlay */
+.mobile-video-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .54);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mobile-settings-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 16px;
+  }
+
+  .icon-button {
+    background: none;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+
+    mat-icon {
+      width: 64px;
+      height: 64px;
+      font-size: 64px;
+      line-height: 64px;
+      color: #fff;
+    }
+
+    ::ng-deep .svg-icon svg {
+      width: 64px;
+      height: 64px;
+      font-size: 64px;
+      line-height: 64px;
+      fill: #fff;
+    }
+  }
+}

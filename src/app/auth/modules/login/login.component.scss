@@ -1,0 +1,102 @@
+.form-content {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+  padding-top: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .54);
+}
+
+mat-card {
+  width: 720px;
+  background-color: transparent;
+}
+
+mat-progress-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+
+:host {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #000;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  font-family: Inter, sans-serif;
+}
+
+.row-actions {
+  margin-top: 24px;
+}
+
+app-visibility-icon,
+app-visibility-off-icon {
+  display: inline-flex;
+}
+
+.suffix-button {
+  background: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+
+  ::ng-deep svg {
+    fill: #fff;
+  }
+}
+
+@media (max-width: 599px) {
+  mat-card {
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+  }
+
+  :host {
+    display: block;
+    padding: 24px 24px;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 16px 0;
+  }
+}

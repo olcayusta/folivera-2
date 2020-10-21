@@ -1,0 +1,54 @@
+h1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  height: 48px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+  grid-gap: 4px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.img-aspect {
+  padding-top: 150%;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.item-title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.item-year {
+  font-size: 11px;
+  line-height: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}

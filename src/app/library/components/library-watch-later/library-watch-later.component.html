@@ -1,0 +1,22 @@
+<div class="grid-box" id="grid">
+  <h1>Daha sonra izle</h1>
+  <div class="items" *ngIf="movies$ | async as movies; else spinner">
+    <div class="favorite-item" *ngFor="let movie of movies">
+      <a routerLink="/movie/{{movie.id}}">
+        <div class="img-aspect">
+          <img class="img" alt=".." [attr.data-src]="movie.posterUrl" appLazyLoadImg>
+        </div>
+      </a>
+      <div class="details">
+        <a routerLink="/movie/{{movie.id}}">
+          <div class="item-title">{{movie.title}}</div>
+        </a>
+        <div class="item-year">{{movie.year}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <mat-spinner diameter="32"></mat-spinner>
+</ng-template>

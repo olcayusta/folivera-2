@@ -1,0 +1,44 @@
+<mat-toolbar>
+  <span>Filtre</span>
+  <span class="flex-spacer"></span>
+  <button mat-icon-button>
+    <app-close-icon></app-close-icon>
+  </button>
+</mat-toolbar>
+<mat-nav-list>
+  <h3 mat-subheader>Labels</h3>
+  <div class="checkbox-list">
+    <mat-checkbox color="primary">Türkçe altyazı</mat-checkbox>
+    <mat-checkbox color="primary">Türkçe seslendirme</mat-checkbox>
+  </div>
+</mat-nav-list>
+<mat-nav-list class="select-nav-list">
+  <h3 mat-subheader>Format</h3>
+  <mat-form-field appearance="fill" class="select-format">
+    <mat-label>Favorite food</mat-label>
+    <mat-select disableOptionCentering value="steak-0">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-nav-list>
+<mat-nav-list>
+  <h3 mat-subheader>Range</h3>
+  <mat-slider color="primary" value="50" thumbLabel min="0" max="10" step="0.1"></mat-slider>
+</mat-nav-list>
+<mat-nav-list>
+  <h3 mat-subheader>Order by</h3>
+  <mat-radio-group color="primary">
+    <mat-radio-button value="1">Date created</mat-radio-button>
+    <mat-radio-button value="2">Last opened</mat-radio-button>
+    <mat-radio-button value="3">Last modified</mat-radio-button>
+    <mat-radio-button value="4">Owner</mat-radio-button>
+    <mat-radio-button value="5">Name</mat-radio-button>
+    <mat-radio-button value="6">Completed</mat-radio-button>
+  </mat-radio-group>
+</mat-nav-list>
+<div class="row-actions">
+  <button mat-button color="primary">FİLTRE EKLE</button>
+</div>
+

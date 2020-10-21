@@ -1,0 +1,127 @@
+.player-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 96px 24px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background: #292929;
+  background: rgba(0, 0, 0, .54);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+
+.movie-info {
+  margin-left: 8px;
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 24px 0;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+.empty-button {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  margin-right: 16px;
+}
+
+.level-height {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .25px;
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.time-bracket {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 0 4px;
+}
+
+.current-time {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.duration-time {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+app-check-icon,
+app-picture-in-picture-alt-icon,
+app-audio-track-icon,
+app-fullscreen-icon,
+app-fulscreen-exit-icon,
+app-settings-icon,
+app-closed-caption-icon,
+app-replay-icon,
+app-volume-up-icon,
+app-volume-off-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+}
+
+:host ::ng-deep svg {
+  fill: #fff;
+}
+
+
+/* desktops */
+@media (hover: hover) {
+  .watch-player {
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .player-content {
+    position: relative;
+  }
+
+  app-mobile-player {
+    display: none !important;
+  }
+
+  .mobile-video-overlay {
+    display: none;
+  }
+}
+
+.empty-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.selected {
+  background-color: #484848 !important;
+}
+
+.mat-menu-item {
+  letter-spacing: .25px;
+}

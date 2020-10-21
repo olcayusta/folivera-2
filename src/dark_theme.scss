@@ -1,0 +1,158 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Deep Purple
+$mat-deep-purple: (
+  50: #F2E7FE,
+  100: #DBB2FF,
+  200: #BB86FC,
+  300: #985EFF,
+  400: #7F39FB,
+  500: #6200EE,
+  600: #5600E8,
+  700: #3700B3,
+  800: #30009C,
+  900: #23036A,
+  A100: #b388ff,
+  A200: #7c4dff,
+  A400: #651fff,
+  A700: #6200ea,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ng-app-primary: mat-palette($mat-deep-purple, 200);
+$ng-app-accent: mat-palette($mat-deep-purple, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ng-app-warn: mat-palette($mat-pink);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$ng-app-theme: mat-dark-theme($ng-app-primary, $ng-app-accent, $ng-app-warn);
+
+// Benim ekledigim kodlar
+$background: map-get($ng-app-theme, background);
+$background: map_merge($background, (
+  background: #121212,
+  app-bar: #272727,
+  dialog: #383838
+));
+
+$my-custom-theme: map_merge($ng-app-theme, (background: $background));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($my-custom-theme);
+
+body, html {
+  background-color: #121212;
+  // background-color: mat-color($background2, background);
+  color: rgba(255, 255, 255, 0.87)
+}
+
+/* width */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* width */
+.mat-drawer-inner-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+  // background: #1a1a1a;
+  // border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Handle */
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.24);
+  border-right: 1px solid #353535;
+}
+
+/* Handle on hover */
+.mat-drawer-inner-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(255, 255, 255, 0.32) !important;
+}
+
+svg {
+  fill: rgba(255, 255, 255, .6);
+}
+
+mat-icon {
+  color: rgba(255, 255, 255, .6) !important;
+}
+
+.mat-drawer {
+  background-color: #353535;
+}
+
+.mat-menu-panel {
+  background-color: #2F2F2F;
+}
+
+.mat-snack-bar-container {
+  background: #e4e4e4;
+}
+
+.mat-simple-snackbar {
+  color: #000;
+}
+
+.mat-tooltip {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: .4px;
+  background-color: #A0A0A0;
+  color: #121212 !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}

@@ -1,0 +1,17 @@
+<div class="chat-box">
+  <div class="chat-box-head">
+    <h3>Watch Party</h3>
+    <button mat-icon-button matTooltip="Kopyala">
+      <mat-icon>link</mat-icon>
+    </button>
+  </div>
+
+  <app-party-messages-list></app-party-messages-list>
+
+  <div class="chat-box-form">
+    <mat-form-field floatLabel="never">
+      <mat-label>Type a message...</mat-label>
+      <input matInput [formControl]="msgForm" (keyup.enter)="send()" autocomplete="off" spellcheck="false">
+    </mat-form-field>
+  </div>
+</div>

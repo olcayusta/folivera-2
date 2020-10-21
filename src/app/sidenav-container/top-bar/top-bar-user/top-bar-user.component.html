@@ -1,0 +1,46 @@
+<!--<a mat-icon-button routerLink="/search" matTooltip="Ara">
+  <app-search-icon></app-search-icon>
+</a>-->
+<!--<button mat-icon-button>
+  <mat-icon>tune</mat-icon>
+</button>
+<button mat-icon-button>
+  <mat-icon>help</mat-icon>
+</button>-->
+<a mat-icon-button routerLink="/settings">
+  <app-settings-icon></app-settings-icon>
+  <!--<mat-icon fontSet="material-icons-outlined">settings</mat-icon>-->
+</a>
+<!--    <button mat-icon-button (click)="openSheet.emit()" matTooltip="Filtre">
+      <app-filter-list-icon></app-filter-list-icon>
+    </button>-->
+<!--    <button class="avatar-button no-avatar-button" matTooltip="Olcay Usta" #avatarButton="cdkOverlayOrigin"
+            cdkOverlayOrigin
+            (click)="openAvatarPopup()">
+      <span class="no-avatar">O</span>
+    </button>-->
+
+<ng-container *ngIf="isSmallScreen; else bigScreen">
+  <button class="reset-button avatar-button" matTooltip="Olcay Usta" (click)="displaySheet()">
+    <span class="img-back">
+      <img class="avatar" src="{{user.avatarUrl}}" alt="">
+    </span>
+  </button>
+</ng-container>
+
+<ng-template #bigScreen>
+  <button class="reset-button avatar-button" matTooltip="Olcay Usta" routerLink="/settings">
+    <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
+  </button>
+<!--  <button class="reset-button avatar-button" matTooltip="Olcay Usta" #avatarButton="cdkOverlayOrigin" cdkOverlayOrigin
+          (click)="openAvatarPopup()">
+    <img class="avatar" src="{{user.avatarUrl}}" alt="{{user.displayName}}">
+  </button>
+  <ng-template cdkConnectedOverlay
+               (overlayOutsideClick)="closePopup()"
+               [cdkConnectedOverlayOrigin]="avatarButton"
+               [cdkConnectedOverlayScrollStrategy]="blockScrollStrategy"
+               [cdkConnectedOverlayOpen]="avatarPopupOpened">
+    <ng-container *ngComponentOutlet="avatarPopupComponent"></ng-container>
+  </ng-template>-->
+</ng-template>

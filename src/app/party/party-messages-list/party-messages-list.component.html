@@ -1,0 +1,6 @@
+<div class="chat-box-items">
+  <div class="chat-box-item" *ngFor="let msg of messages">
+    <div class="chat-item-user-picture" [ngStyle]="{background: msg.bgColor}">{{msg.char}}</div>
+    <div class="chat-post">{{msg.msg}}</div>
+  </div>
+</div>

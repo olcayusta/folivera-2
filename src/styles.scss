@@ -1,1 +1,64 @@
+@import "reset";
+@import "dark_theme";
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // background-color: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  min-height: 100vh;
+}
+
+mat-sidenav-container {
+  background-color: #000 !important;
+}
+
+.wrapper {
+  padding-top: 64px;
+}
+
+mat-sidenav-container {
+  // background-color: #121212 !important;
+}
+
+/*::ng-deep .mat-progress-bar-background {
+  fill: #4c3f5b !important;
+}*/
+
+.mat-progress-bar-buffer {
+  background-color: #4c3f5b !important;
+}
+
+/*
+::ng-deep .mat-progress-bar-fill::after {
+  // background-color: #4c3f5b !important;
+  // background: #4a445c !important;
+  background: #BB86FC;
+}
+*/
+
+:root {
+  --medium-emphasis-text-color: rgba(255, 255, 255, 0.6);
+}
+
+.headline-4 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 36px;
+  font-family: Inter, sans-serif;
+  margin: 24px 0;
+}

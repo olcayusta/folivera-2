@@ -1,0 +1,44 @@
+<div class="watch-player">
+  <div class="player-content" id="playerContent">
+    <app-video></app-video>
+    <div class="mobile-video-overlay">
+      <div class="mobile-settings-button" (click)="openBottomSheet()">
+        <button mat-icon-button>
+          <mat-icon>language</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>settings</mat-icon>
+        </button>
+      </div>
+      <button mat-ripple class="icon-button" (click)="playpause()">
+        <ng-container *ngIf="paused; else pauseIcon">
+          <mat-icon>
+            <app-play-arrow-icon class="svg-icon"></app-play-arrow-icon>
+          </mat-icon>
+        </ng-container>
+        <ng-template #pauseIcon>
+          <app-pause-icon class="svg-icon"></app-pause-icon>
+        </ng-template>
+      </button>
+    </div>
+    <div class="player-footer-m">
+      <div class="player-footer-m-header">
+        <div class="mobile-time">
+          <div class="current-time">{{(currentTime | async) | currentTime}}</div>
+          <div class="time-bracket">/</div>
+          <div class="duration-time">{{(duration | async) | duration}}</div>
+        </div>
+        <span class="flex-spacer"></span>
+        <div class="buttons">
+          <button mat-icon-button (click)="changeFullScreen()">
+            <mat-icon>{{isFullscreenEnabled ? 'fullscreen_exit' : 'fullscreen'}}</mat-icon>
+          </button>
+        </div>
+      </div>
+      <mat-slider [value]="currentTime | async" [min]="0" [max]="duration | async" (input)="seekSliderChange($event)"></mat-slider>
+    </div>
+  </div>
+  <!--<div class="subtitle-container">
+    <div>{{subtitleTest}}</div>
+  </div>-->
+</div>

@@ -1,0 +1,65 @@
+:host {
+  width: 320px;
+  color: #fff;
+  background-color: #1e1e1e;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.popup {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+.popup-border {
+
+}
+
+.header {
+  padding: 24px 16px 16px 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.avatar-background {
+  margin: 0 auto;
+  padding-bottom: 12px;
+}
+
+.avatar {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  // border: 3px solid #6200ee;
+  border: 1px solid #bb86fc;
+}
+
+.no-avatar {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--medium-emphasis-text-color);
+}
+
+app-settings-icon,
+app-exit-to-app-icon {
+  display: inline-flex;
+  margin-right: 16px;
+}
+
+.mat-list-item span {
+  font-size: 14px;
+}

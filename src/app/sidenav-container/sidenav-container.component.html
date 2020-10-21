@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav fixedInViewport [autoFocus]="false" position="start" (openedStart)="sidenavOpenedStart()"
+               (closedStart)="sidenavClosedStart()">
+    <ng-container *ngComponentOutlet="sidenavComponent"></ng-container>
+  </mat-sidenav>
+  <mat-sidenav #sheet fixedInViewport (openedStart)="hideOverflow()" (closedStart)="showOverflow()"
+               [fixedTopGap]="sheetMode === 'side' ? 64 : 0" [mode]="sheetMode" [autoFocus]="false" position="end">
+    <ng-container *ngComponentOutlet="sheetComponent"></ng-container>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-top-bar (openSidenav)="sidenavToggle(); sidenav.toggle()"
+                 (openSheet)="sheetToggle(); sheet.toggle()"></app-top-bar>
+    <router-outlet></router-outlet>
+    <ng-container *ngComponentOutlet="bottomBarComponent"></ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

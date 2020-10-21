@@ -1,0 +1,35 @@
+<mat-card class="mat-elevation-z0">
+  <mat-progress-bar mode="indeterminate" [class.hidden]="!loader"></mat-progress-bar>
+
+  <h1>Oturum aç</h1>
+
+  <form autocomplete="off" spellcheck="false" [formGroup]="form" (submit)="submit()">
+    <div class="form-content">
+
+      <mat-form-field>
+        <input placeholder="E-posta" matInput formControlName="email">
+        <mat-error *ngIf="form.get('email').hasError('required')">Bir e-posta adresi girin</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input placeholder="Şifre" [type]="passwordHide ? 'password' : 'text'" matInput formControlName="password">
+        <mat-error *ngIf="form.get('password').hasError('required')">Bir şifre girin</mat-error>
+        <button type="button" matRipple matSuffix class="suffix-button" (click)="passwordHide = ! passwordHide"
+                matTooltip="{{passwordHide ? 'Şifreyi göster' : 'Gizle'}}">
+          <ng-container *ngIf="passwordHide; else visibility">
+            <app-visibility-off-icon></app-visibility-off-icon>
+          </ng-container>
+          <ng-template #visibility>
+            <app-visibility-icon></app-visibility-icon>
+          </ng-template>
+        </button>
+      </mat-form-field>
+
+      <div class="row-actions">
+        <button type="submit" mat-raised-button color="primary">GÖNDER</button>
+        <!--<button mat-button>Şifremi unuttum?</button>-->
+      </div>
+    </div>
+    <!--<div class="disable-overlay"></div>-->
+  </form>
+</mat-card>

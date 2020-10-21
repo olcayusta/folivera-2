@@ -1,0 +1,106 @@
+<div class="watch-player">
+  <div class="player-content" id="playerContent">
+    <app-video></app-video>
+    <div class="player-footer mat-elevation-z4">
+      <mat-slider color="primary" class="progress-slider" [value]="currentTime$ | async" [min]="0"
+                  [max]="duration | async"
+                  (input)="seekSliderChange($event)"></mat-slider>
+      <div class="player-controls">
+        <button mat-icon-button (click)="replay()" matTooltip="Geri atla">
+          <app-replay-icon></app-replay-icon>
+        </button>
+        <button mat-icon-button (click)="playpause()" [matTooltip]="isPaused ? 'Oynat' : 'Duraklat'">
+          <app-play-arrow-icon *ngIf="isPaused"></app-play-arrow-icon>
+          <app-pause-icon *ngIf="!isPaused"></app-pause-icon>
+        </button>
+        <button mat-icon-button (click)="forward()" matTooltip="İleri atla">
+          <app-forward-icon></app-forward-icon>
+        </button>
+        <button mat-icon-button (click)="mute()">
+          <ng-container *ngIf="isMuted$ | async; else volumeUpIcon">
+            <app-volume-off-icon></app-volume-off-icon>
+          </ng-container>
+          <ng-template #volumeUpIcon>
+            <app-volume-up-icon></app-volume-up-icon>
+          </ng-template>
+        </button>
+        <mat-slider color="primary" step="1" max="100" value="50" (input)="volumeSliderChange($event)"></mat-slider>
+        <span class="flex-spacer"></span>
+        <div class="controls-group">
+          <div class="time">
+            <div class="current-time">{{(currentTime$ | async) | currentTime}}</div>
+            <div class="time-bracket">/</div>
+            <div class="duration-time">{{(duration | async) | duration}}</div>
+          </div>
+
+          <ng-container *ngIf="isPipEnabled">
+            <button mat-icon-button (click)="pipButtonClicked()" matTooltip="Görüntü içinde görüntü">
+              <app-picture-in-picture-alt-icon></app-picture-in-picture-alt-icon>
+            </button>
+          </ng-container>
+
+          <button mat-icon-button [matMenuTriggerFor]="subtitleMenu" matTooltip="Altyazı">
+            <app-closed-caption-icon></app-closed-caption-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="languageMenu" matTooltip="Seslendirme">
+            <app-audio-track-icon></app-audio-track-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="settingsMenu" matTooltip="Kalite">
+            <app-settings-icon></app-settings-icon>
+          </button>
+          <button mat-icon-button (click)="changeFullscreen()"
+                  [matTooltip]="isFullscreen ? 'Tam ekrandan çık' : 'Tam ekran'">
+            <app-fullscreen-icon *ngIf="!isFullscreen"></app-fullscreen-icon>
+            <app-fulscreen-exit-icon *ngIf="isFullscreen"></app-fulscreen-exit-icon>
+          </button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <h2 class="movie-title">George Of The Jungle</h2>
+      </div>
+    </div>
+  </div>
+  <!--<div class="subtitle-container">
+    <div>{{subtitleTest}}</div>
+  </div>-->
+</div>
+
+<mat-menu #subtitleMenu="matMenu">
+  <button mat-menu-item *ngFor="let subtitle of subtitles$ | async; let index = index"
+          (click)="changeSubtitle(index)">{{subtitle.lang}}</button>
+</mat-menu>
+
+<mat-menu #languageMenu="matMenu" yPosition="above">
+  <button [class.selected]="track.selected" mat-menu-item *ngFor="let track of audioTracks$ | async; let index = index"
+          (click)="changeAudioTrack(index)">
+    <mat-icon *ngIf="track.selected">check</mat-icon>
+    <span class="empty-icon" *ngIf="!track.selected"></span>
+    <span>{{track.name}}</span>
+  </button>
+</mat-menu>
+
+<mat-menu #settingsMenu="matMenu" yPosition="above">
+    <button mat-menu-item class="mini-button" *ngFor="let level of levels$ | async as levels; let index = index" (click)="changeResolution(index)">
+   <!--   <app-check-icon *ngIf="!hls.autoLevelEnabled && index === hls.currentLevel"></app-check-icon>
+      <span class="empty-button" *ngIf="hls.autoLevelEnabled || hls.currentLevel !== index"></span>-->
+      <span class="level-height">{{level.height}}p</span>
+    </button>
+<!--    <button mat-menu-item class="mini-button" (click)="makeLevelAuto()">-->
+<!--      <span class="empty-button" *ngIf="!hls.autoLevelEnabled"></span>-->
+<!--      <app-check-icon *ngIf="hls.autoLevelEnabled"></app-check-icon>-->
+<!--      <span class="level-height">Otomatik</span>-->
+<!--    </button>-->
+</mat-menu>
+
+
+  <!--  <button mat-menu-item class="mini-button" *ngFor="let level of levels; let index = index" (click)="changeResolution(index)">
+      <app-check-icon *ngIf="!hls.autoLevelEnabled && index === hls.currentLevel"></app-check-icon>
+      <span class="empty-button" *ngIf="hls.autoLevelEnabled || hls.currentLevel !== index"></span>
+      <span class="level-height">{{level.height}}p</span>
+    </button>
+    <button mat-menu-item class="mini-button" (click)="makeLevelAuto()">
+      <span class="empty-button" *ngIf="!hls.autoLevelEnabled"></span>
+      <app-check-icon *ngIf="hls.autoLevelEnabled"></app-check-icon>
+      <span class="level-height">Otomatik</span>
+    </button>-->
+

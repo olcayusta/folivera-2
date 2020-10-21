@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'http://192.168.1.2:9001',
+  appName: 'Movie App',
 };

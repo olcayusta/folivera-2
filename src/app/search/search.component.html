@@ -1,0 +1,25 @@
+<!--<form autocomplete="off" spellcheck="false">
+  <mat-form-field floatLabel="never">
+    <mat-label>Ara...</mat-label>
+    <input matInput [formControl]="searchControl">
+  </mat-form-field>
+</form>-->
+
+<mat-chip-list>
+  <mat-chip>Filmler</mat-chip>
+  <mat-chip>Oyuncular</mat-chip>
+  <mat-chip>Yönetmenler</mat-chip>
+</mat-chip-list>
+
+<h3 class="search-result-title">ARAMA SONUÇLARI</h3>
+
+<div class="items">
+  <div class="item" *ngFor="let movie of movies$ | async as movies">
+    <div class="img-inner">
+      <img class="item-img" src="{{movie.posterUrl}}">
+    </div>
+    <div class="details">
+      <div class="item-title">{{movie.title}}</div>
+    </div>
+  </div>
+</div>

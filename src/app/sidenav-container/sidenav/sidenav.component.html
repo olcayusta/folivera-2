@@ -1,0 +1,59 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="closeSidenav()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <!--<span class="app-title">Folivera</span>-->
+</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}"
+     (click)="closeSidenav()">
+    <span>Ana Sayfa</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/library" (click)="closeSidenav()">
+    <span>Originals</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/likes" (click)="closeSidenav()">
+    <span>Just Added</span>
+  </a>
+  <a mat-list-item routerLinkActive="active" routerLink="/wl" (click)="closeSidenav()">
+    <span>Çok Yakında</span>
+  </a>
+</mat-nav-list>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <a mat-list-item>
+    Aksiyon
+  </a>
+  <a mat-list-item>
+    Comedy
+  </a>
+  <a mat-list-item>
+    Crime
+  </a>
+  <a mat-list-item>
+    Documentaries
+  </a>
+  <a mat-list-item>
+    Drama
+  </a>
+  <a mat-list-item>
+    Fantasy & Sci-Fi
+  </a>
+  <a mat-list-item>
+    Korku
+  </a>
+  <a mat-list-item>
+    International
+  </a>
+  <a mat-list-item>
+    Kids & Family
+  </a>
+  <a mat-list-item>
+    Latino
+  </a>
+  <a mat-list-item>
+    Music
+  </a>
+</mat-nav-list>
+<mat-divider></mat-divider>
+<div class="beta-text">© 2020 Google LLC</div>

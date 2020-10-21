@@ -1,0 +1,17 @@
+<ng-container *ngIf="movies$ | async as movies">
+  <div class="slider-head">
+    <h3 class="headline-4">Olcay, izlemeye devam et</h3>
+<!--    <div class="slider-buttons">
+      <button mat-icon-button>
+        <app-arrow-forward-icon></app-arrow-forward-icon>
+      </button>
+    </div>-->
+  </div>
+
+ <div class="slider-inner">
+   <div class="items">
+     <app-continue-watching-item *ngFor="let movie of movies" [movie]="movie"></app-continue-watching-item>
+   </div>
+ </div>
+</ng-container>
+

@@ -1,0 +1,33 @@
+<a class="item-link">
+  <div class="item">
+    <div class="img-background" matRipple>
+      <img class="img" appLazyLoadImg [attr.data-src]="movie.posterUrl">
+      <div class="movie-duration">1:41:00</div>
+    <!--  <mat-progress-bar [value]="progress"></mat-progress-bar>-->
+    </div>
+    <div class="details">
+      <a [routerLink]="['/movie', movie.id]">
+        <div class="title">{{movie.originalTitle}}</div>
+      </a>
+      <div class="remaining-time">{{progress}} dk kaldı</div>
+      <div class="details-icon">
+        <button mat-icon-button [matMenuTriggerFor]="moreMenu">
+          <app-more-vert-icon></app-more-vert-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</a>
+
+
+
+<mat-menu #moreMenu="matMenu" overlapTrigger>
+  <ng-template matMenuContent>
+    <button mat-menu-item (click)="deleteToLibrary()">
+      <span>Listeden kaldır</span>
+    </button>
+    <button mat-menu-item>
+      <span>Paylaş</span>
+    </button>
+  </ng-template>
+</mat-menu>

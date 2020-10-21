@@ -1,0 +1,37 @@
+.mat-dialog-actions {
+  box-sizing: content-box !important;
+}
+
+mat-form-field {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+textarea {
+  font-size: 16px;
+  line-height: 20px;
+  box-sizing: content-box;
+}
+
+/* width */
+textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+  // border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Handle */
+textarea::-webkit-scrollbar-thumb {
+  background: #7e7e7e;
+  border-radius: 24px;
+}
+
+/* Handle on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

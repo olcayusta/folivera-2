@@ -1,0 +1,46 @@
+<a class="item-link">
+  <div class="item">
+    <div class="img-background" matRipple routerLink="/watch/100">
+      <img class="img" appLazyLoadImg [attr.data-src]="movie.posterUrl">
+      <!--<img class="img" src="{{movie.posterUrl}}" alt=".." loading="lazy">-->
+    </div>
+    <div class="details">
+     <!-- <div class="info">
+        <div class="year">{{movie.year}}</div>
+      </div>-->
+      <a [routerLink]="['/movie', movie.id]">
+        <div class="title">{{movie.originalTitle}}</div>
+      </a>
+      <div class="info">
+        <div class="year">{{movie.year}}</div>
+        <div class="bracket">•</div>
+        <div>GENEL İZLEYİCİ</div>
+      </div>
+
+      <div class="genre-list">
+        <div>Komedi</div>
+      </div>
+
+      <div class="details-icon">
+        <button mat-icon-button [matMenuTriggerFor]="moreMenu" [matMenuTriggerData]="{id: movie.id}">
+          <app-more-vert-icon></app-more-vert-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</a>
+
+<mat-menu #moreMenu="matMenu" overlapTrigger>
+  <ng-template matMenuContent let-id="id">
+    <button mat-menu-item (click)="addToLibrary(id)">
+      <span>Kitaplığa ekle</span>
+    </button>
+    <a mat-menu-item routerLink="watch/200">
+      <span>Birlikte izle</span>
+    </a>
+    <button mat-menu-item>
+      <span>İlgilenmiyorum</span>
+    </button>
+  </ng-template>
+
+</mat-menu>
