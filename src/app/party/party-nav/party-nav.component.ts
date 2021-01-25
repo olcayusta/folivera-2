@@ -1,27 +1,28 @@
-import { Component, OnInit, ChangeDetectionStrategy, ɵmarkDirty as markDirty } from '@angular/core';
-import { SocketService } from '@shared/services/socket.service';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ɵmarkDirty as markDirty,
+} from "@angular/core";
+import { SocketService } from "@shared/services/socket.service";
+import { FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-party-nav',
-  templateUrl: './party-nav.component.html',
-  styleUrls: ['./party-nav.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "app-party-nav",
+  templateUrl: "./party-nav.component.html",
+  styleUrls: ["./party-nav.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PartyNavComponent implements OnInit {
   msgForm: FormControl = new FormControl();
 
-  constructor(
-    private socketService: SocketService
-  ) {
-  }
+  constructor(private socketService: SocketService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   send(): void {
     this.socketService.send(this.msgForm.value);
-    this.msgForm.patchValue('');
+    this.msgForm.patchValue("");
   }
 
   onScroll($event): void {

@@ -6,24 +6,25 @@ import {
   Output,
   EventEmitter,
   ɵdetectChanges as detectChanges,
-  AfterViewInit, NgModule
-} from '@angular/core';
-import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
-import { VideoService } from '@shared/services/video.service';
-import { Observable, Subscription } from 'rxjs';
-import { SharedModule } from '@shared/shared.module';
-import { MatMenuModule } from '@angular/material/menu';
-import { IconsModule } from '@shared/icons/icons.module';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatIconModule } from '@angular/material/icon';
+  AfterViewInit,
+  NgModule,
+} from "@angular/core";
+import { MatSliderChange, MatSliderModule } from "@angular/material/slider";
+import { VideoService } from "@shared/services/video.service";
+import { Observable, Subscription } from "rxjs";
+import { SharedModule } from "@shared/shared.module";
+import { MatMenuModule } from "@angular/material/menu";
+import { CommonModule } from "@angular/common";
+import { MatButtonModule } from "@angular/material/button";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatIconModule } from "@angular/material/icon";
+import { IconsModule } from "../../shared/icons/icons.module";
 
 @Component({
-  selector: 'app-desktop-player',
-  templateUrl: './desktop-player.component.html',
-  styleUrls: ['./desktop-player.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "app-desktop-player",
+  templateUrl: "./desktop-player.component.html",
+  styleUrls: ["./desktop-player.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DesktopPlayerComponent implements OnInit, AfterViewInit {
   currentTime$: Observable<number>;
@@ -47,10 +48,7 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
 
   isPipEnabled = true;
 
-  constructor(
-    private videoService: VideoService
-  ) {
-  }
+  constructor(private videoService: VideoService) {}
 
   ngAfterViewInit(): void {
     // @ts-ignore
@@ -72,10 +70,10 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
 
   playpause(): void {
     /*if (this.video.paused) {
-      this.video.play();
-    } else {
-      this.video.pause();
-    }*/
+          this.video.play();
+        } else {
+          this.video.pause();
+        }*/
     this.videoService.pause();
     this.isPaused = !this.isPaused;
   }
@@ -97,7 +95,6 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
     // this.video.volume = $event.value / 100;
     // this.updatePlayerVolumeInfo();
     this.videoService.updateVolume($event.value / 100);
-
   }
 
   changeSubtitle(index: number): void {
@@ -113,7 +110,7 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
   }
 
   async changeFullscreen(): Promise<void> {
-    const el = document.getElementById('playerContent');
+    const el = document.getElementById("playerContent");
     if (document.fullscreenElement) {
       await document.exitFullscreen();
     } else {
@@ -126,8 +123,7 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
     };
 
     /* this.videoEl.nativeElement.style.height = '100vh';
-     this.videoEl.nativeElement.style.width = '100vw';*/
-
+         this.videoEl.nativeElement.style.width = '100vw';*/
   }
 
   // experimental
@@ -147,8 +143,8 @@ export class DesktopPlayerComponent implements OnInit, AfterViewInit {
     CommonModule,
     MatButtonModule,
     MatTooltipModule,
-    MatIconModule
-  ]
+    MatIconModule,
+    IconsModule,
+  ],
 })
-class DesktopPlayerModule {
-}
+class DesktopPlayerModule {}

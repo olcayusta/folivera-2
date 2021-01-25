@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { MovieComponent } from './movie.component';
-import { MovieResolverService } from './resolvers/movie-resolver.service';
+import { MovieComponent } from "./movie.component";
+import { MovieResolverService } from "./resolvers/movie-resolver.service";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: MovieComponent,
-    resolve: {movie: MovieResolverService}
-  }
+    resolve: { movie: MovieResolverService },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MovieRoutingModule {
-}
+export class MovieRoutingModule {}

@@ -19,7 +19,6 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0;
   transition: all 500ms;
 }
 
@@ -76,6 +75,17 @@ app-group-icon {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.watching-count {
+  border: 1px solid #fafc86;
+  display: inline-flex;
+  border-radius: 4px;
+  color: #fafc86;
+  padding: 2px 4px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .4px;
+}
+
 .bracket {
   font-size: 11px;
   padding: 0 4px;
@@ -86,24 +96,10 @@ app-group-icon {
   height: 100vh !important;
 }
 
-@media (max-width: 599px) {
-  .details {
-    padding: 16px;
-    // margin: 0 8px 0 8px;
-  }
-
-  .mat-menu-item {
-    font-size: 16px !important;
-    letter-spacing: 0 !important;
-
-    mat-icon {
-      display: none;
-    }
-  }
+/*
+mat-chip {
+  background-color: transparent !important;
+  color: #F2E7FE;
+  border: 1px solid #F2E7FE;
 }
-
-@media (min-width: 599px) {
-  .details-icon {
-    display: none;
-  }
-}
+*/

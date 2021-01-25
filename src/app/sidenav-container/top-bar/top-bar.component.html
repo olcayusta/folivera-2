@@ -8,11 +8,11 @@
 
   <app-topbar-logo-renderer></app-topbar-logo-renderer>
 
-<!--  <span class="flex-spacer"></span>
+  <span class="flex-spacer"></span>
 
-  <app-search-form></app-search-form>
+  <!--<app-search-form></app-search-form>-->
 
-  <span class="flex-spacer"></span>-->
+  <span class="flex-spacer"></span>
 
   <ng-container *ngIf="isLoggedIn$ | async; else notLogged">
     <div id="right-content">
@@ -24,6 +24,6 @@
   <!--  <a mat-icon-button routerLink="/search" matTooltip="Ara" class="search-icon">
       <mat-icon>search</mat-icon>
     </a>-->
-    <a mat-button routerLink="/login">OTURUM AÇIN</a>
+    <a mat-stroked-button color="primary" routerLink="/login">OTURUM AÇIN</a>
   </ng-template>
 </mat-toolbar>

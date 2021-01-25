@@ -3,3 +3,9 @@
   padding: 0 160px;
   margin-bottom: 128px;
 }
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 4px;
+}

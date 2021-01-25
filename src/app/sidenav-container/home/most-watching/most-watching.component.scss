@@ -20,10 +20,9 @@ mat-chip-list {
 
 .items {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-gap: 128px 4px;
   margin-bottom: 128px;
-  padding-top: 16px;
 }
 
 @media screen and (max-width: 599px) {

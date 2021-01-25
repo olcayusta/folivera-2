@@ -24,7 +24,7 @@ mat-sidenav {
 }
 
 mat-sidenav-container {
-  background-color: #000 !important;
+  // background-color: #000 !important;
 }
 
 .wrapper {
@@ -56,9 +56,9 @@ mat-sidenav-container {
 }
 
 .headline-4 {
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 36px;
-  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
   margin: 24px 0;
+  text-transform: uppercase;
 }

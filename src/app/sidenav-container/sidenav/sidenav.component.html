@@ -1,19 +1,22 @@
 <mat-toolbar>
   <button mat-icon-button (click)="closeSidenav()">
-    <mat-icon>close</mat-icon>
+    <mat-icon>menu</mat-icon>
   </button>
   <!--<span class="app-title">Folivera</span>-->
 </mat-toolbar>
 <mat-nav-list>
   <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}"
      (click)="closeSidenav()">
+    <mat-icon fontSet="material-icons-round">home</mat-icon>
     <span>Ana Sayfa</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/library" (click)="closeSidenav()">
-    <span>Originals</span>
+    <mat-icon fontSet="material-icons-round">whatshot</mat-icon>
+    <span>Trendler</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/likes" (click)="closeSidenav()">
-    <span>Just Added</span>
+    <mat-icon>new_releases</mat-icon>
+    <span>Yeni çıkanlar</span>
   </a>
   <a mat-list-item routerLinkActive="active" routerLink="/wl" (click)="closeSidenav()">
     <span>Çok Yakında</span>

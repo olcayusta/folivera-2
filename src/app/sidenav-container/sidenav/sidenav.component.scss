@@ -1,9 +1,5 @@
 mat-toolbar {
   background: transparent !important;
-
-  button {
-    margin-left: 32px;
-  }
 }
 
 .flex-spacer {
@@ -14,46 +10,32 @@ mat-toolbar {
   margin-left: 24px;
 }
 
-.svg-icon {
-  display: inline-flex;
+.mat-list-item {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
-app-home-icon,
-app-video-library-icon,
-app-thumb-up-icon,
-app-settings-icon,
-app-help-icon,
-app-feedback-icon {
-  display: inline-flex;
-  // margin-right: 32px;
-  // margin-left: 8px;
+::ng-deep .mat-list-item-content {
+  // padding-left: 56px !important;
+}
+
+.mat-list-item mat-icon {
+  margin-right: 32px;
+  margin-left: 8px;
 }
 
 .mat-list-item.active {
-  // background-color: rgba(187, 134, 252, 0.08);
-  // background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(187, 134, 252, 0.08);
+
+  mat-icon {
+    color: #BB86FC !important;
+  }
 
   span {
-    font-weight: 700;
+    font-weight: 500;
     color: #bb86fc;
-  }
-}
-.mat-list-item {
-  font-size: 20px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 24px;
-  font-family: Inter, sans-serif;
-
-  ::ng-deep .mat-list-item-content {
-    padding-left: 56px !important;
-  }
-
-  span {
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 20px;
-    line-height: 24px;
   }
 }
 

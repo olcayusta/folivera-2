@@ -1,2 +1,4 @@
 <h4 class="headline-4">Şu an oynatılıyor</h4>
-<p>currently-playing-movies works!</p>
+<div class="items">
+    <app-slider-item *ngFor="let movie of movies$ | async as movies" [movie]="movie"></app-slider-item>
+</div>
