@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Subject} from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class VideoService {
   currentTime = new Subject<number>();
@@ -100,7 +100,7 @@ export class VideoService {
     this.pip.next(true);
   }
 
-/*  getAudioTracks(): void {
-    return this.audioTracks;
-  }*/
+  /*  getAudioTracks(): void {
+      return this.audioTracks;
+    }*/
 }
